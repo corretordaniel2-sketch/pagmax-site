@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://pagmax.app.br/sitemap.xml

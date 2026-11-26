@@ -1,0 +1,152 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- PADRÃO VISUAL t354u v2 (26/11/2026). Ver DIRETRIZES_PERSISTENTES.md §PADRÃO VISUAL t354u. Sem frameworks; CSS inline; Inter auto-hospedada (OFL); GA4/Clarity só com consentimento. -->
+<title>Guia prático: 7 tarefas que você pode automatizar com IA hoje</title><meta name="description" content="Sete tarefas com objetivo, prompt, exemplo e verificação humana. Automatizar, aqui, é execução assistida por IA com revisão humana. Material gratuito de Daniel Iksilara."><meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://pagmax.app.br/guia/7-tarefas-ia/"><meta name="theme-color" content="#0B0D17">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Daniel Iksilara · IA e negócios digitais"><meta property="og:title" content="Guia prático: 7 tarefas que você pode automatizar com IA hoje"><meta property="og:description" content="Sete tarefas com objetivo, prompt, exemplo e verificação humana. Automatizar, aqui, é execução assistida por IA com revisão humana. Material gratuito de Daniel Iksilara."><meta property="og:url" content="https://pagmax.app.br/guia/7-tarefas-ia/"><meta property="og:image" content="https://pagmax.app.br/assets/og-t354u.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Daniel Iksilara · IA e negócios digitais: uma empresa construída com agentes de IA, em público."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@IksilaraDaniel"><meta name="twitter:image" content="https://pagmax.app.br/assets/og-t354u.jpg">
+<link rel="icon" href="../../favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48.png"><link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preload" href="../../assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Inter;font-style:normal;font-weight:400 800;font-display:optional;src:url(../../assets/inter-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#0B0D17;--bg2:#10131F;--card:#141827;--line:#252A3D;--line2:#343A54;--tx:#F4F5FA;--mut:#A8AFC4;--dim:#8C93AB;--ac:#6B4EF6;--ac2:#7C5CFF;--act:#B9ABFF;--ok:#34D399;--r:16px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 520px at 80% -8%,rgba(124,92,255,.20),transparent 62%),radial-gradient(700px 480px at -12% 108%,rgba(56,189,248,.07),transparent 60%),radial-gradient(rgba(255,255,255,.045) 1px,transparent 1.4px) 0 0/26px 26px}
+a{color:var(--act);text-underline-offset:3px}a:hover{color:#fff}
+:focus-visible{outline:3px solid var(--act);outline-offset:3px;border-radius:10px}
+h1,h2,h3{line-height:1.18;letter-spacing:-.022em;margin:0}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:8px 12px;border-radius:8px;z-index:9}.skip:focus{left:8px}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);background:rgba(20,24,39,.75);color:var(--mut);border-radius:999px;padding:5px 12px 5px 10px;font-size:13px;font-weight:600;letter-spacing:.01em}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--ac2);box-shadow:0 0 0 3px rgba(124,92,255,.22)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--act)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 22px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease;font-family:inherit}
+.btn:active{transform:translateY(1px)}
+.btn-p{background:var(--ac);color:#fff;box-shadow:0 10px 30px -10px rgba(107,78,246,.75),inset 0 1px 0 rgba(255,255,255,.18)}.btn-p:hover{background:#5B3FE6;color:#fff}
+.btn-s{background:var(--card);border-color:var(--line2);color:var(--tx)}.btn-s:hover{border-color:var(--ac2);color:#fff}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--tx);transition:border-color .15s,color .15s}.soc a:hover{border-color:var(--ac2);color:var(--act)}
+.foot{color:var(--dim);font-size:13.5px;line-height:1.6}.foot a{color:var(--mut)}
+.lead-form{display:grid;gap:14px}
+.lead-form label{display:block;font-weight:600;font-size:14.5px;color:var(--tx)}.lead-form label small{color:var(--dim);font-weight:500;font-size:13.5px}
+.lead-form input[type=text],.lead-form select{display:block;width:100%;margin-top:7px;min-height:50px;background:#0D1020;color:var(--tx);border:1px solid var(--line2);border-radius:12px;padding:12px 14px;font:16px Inter,system-ui,sans-serif}
+.lead-form input::placeholder{color:#7D84A0}
+.lead-form input:focus,.lead-form select:focus{outline:2px solid var(--ac2);outline-offset:1px;border-color:var(--ac2)}
+.lead-form .chk{display:flex;gap:11px;align-items:flex-start;font-weight:500;color:var(--mut);font-size:14px;line-height:1.5}.lead-form .chk input{width:22px;height:22px;margin:1px 0 0;flex:none;accent-color:var(--ac2)}
+.lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lead-form button:disabled{opacity:.6;cursor:wait}
+.lead-form .fine{margin:-4px 0 0;color:var(--dim);font-size:13px}.lead-form .fine a{color:var(--mut)}.lead-msg{min-height:1.3em;margin:0;font-size:14px;color:var(--mut)}.lead-msg.err{color:#FDA4AF}
+.lead-ok{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.35);border-radius:12px;padding:16px}.lead-ok p{color:var(--mut);margin:.4em 0 .8em}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+#pm-ck{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-width:560px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;background:#141827;border:1px solid #343A54;border-radius:14px;padding:12px 14px;box-shadow:0 18px 40px -12px rgba(0,0,0,.7);font:13.5px/1.45 Inter,system-ui,sans-serif;color:#C8CDDD}#pm-ck p{margin:0;flex:1 1 260px}#pm-ck a{color:#B9ABFF}#pm-ck div{display:flex;gap:8px}#pm-ck button{min-height:40px;min-width:96px;padding:8px 14px;border-radius:10px;border:1px solid #4A4F6E;background:#1C2034;color:#F4F5FA;font:700 14px Inter,system-ui,sans-serif;cursor:pointer}#pm-ck button:hover{border-color:#7C5CFF}@media print{#pm-ck{display:none!important}}
+.g{max-width:760px;margin:0 auto;padding:36px 20px 56px}
+.g header{padding-bottom:24px;border-bottom:1px solid var(--line)}
+.g h1{font-size:clamp(28px,6vw,40px);font-weight:800;margin:14px 0 0;letter-spacing:-.03em}
+.g .sub{color:var(--mut);font-size:17px;margin:12px 0 0}
+.g .by{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--mut);font-size:14px}.g .by img{border-radius:50%}
+.g .act{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.g .act .btn{flex:0 1 auto}
+.g h2{font-size:22px;font-weight:800;margin:36px 0 10px}
+.g p,.g li{color:#D5D8E4}.g ul{padding-left:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:16px 0}
+.box.warn{border-color:#5B4B1E;background:#1A170E}.box.warn b{color:#FCD34D}
+.t{border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0;background:linear-gradient(180deg,#141827,#111423)}
+.t h3{font-size:19px;font-weight:800;display:flex;gap:12px;align-items:baseline}.t h3 span{flex:none;color:var(--act);font-size:15px;font-weight:800;border:1px solid #3B3370;border-radius:8px;padding:1px 8px}
+.t p{margin:10px 0}
+.pr{position:relative;margin:12px 0}
+.pr pre{margin:0;white-space:pre-wrap;word-wrap:break-word;background:#0B0E1C;border:1px solid var(--line2);border-radius:12px;padding:16px 16px 16px;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#E6E3FF}
+.cp{position:absolute;top:8px;right:8px;min-height:36px;padding:6px 12px;border-radius:9px;border:1px solid var(--line2);background:#1C2034;color:var(--tx);font:600 13px Inter,system-ui,sans-serif;cursor:pointer}
+.cp:hover{border-color:var(--ac2)}
+.lb{display:inline-block;margin-right:6px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--act)}.lb2{margin:14px 0 6px!important;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--act)}.lb2 small{text-transform:none;letter-spacing:0;color:var(--dim);font-weight:600}.tool{font-size:14.5px;color:var(--mut)!important}.ex{margin:0;white-space:pre-wrap;word-wrap:break-word;background:#12162A;border:1px dashed var(--line2);border-radius:12px;padding:14px 16px;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#C8CDDD}.rv{font-size:14.5px;color:var(--mut)!important}.rv b{color:var(--tx)}
+.g footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line)}
+@media print{body::before{display:none}body{background:#fff;color:#111}.g{padding:0;max-width:none}.g p,.g li,.t p,.rv{color:#222!important}.t,.box{background:#fff!important;border-color:#ccc;break-inside:avoid}.pr pre,.ex{background:#f5f4ff;color:#1a1340;border-color:#ccc}.lb,.lb2{color:#4b2fd6}.cp,.act,.noprint{display:none!important}.eyebrow,.t h3 span{color:#4b2fd6}.badge{color:#333;background:#fff}h1,h2,h3{color:#111}a{color:#4b2fd6}.g .sub{color:#333}}
+</style>
+<script>/* t354u v2: GA4 e Clarity só depois do "Aceitar" (preferência em localStorage pm_cookies). */window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}(function(){var K="pm_cookies",v=null;try{v=localStorage.getItem(K)}catch(e){}function load(){if(window.__pmL)return;window.__pmL=1;gtag("js",new Date());gtag("config","G-CX4YRZL19Q");var s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id=G-CX4YRZL19Q";document.head.appendChild(s);(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","zjrxurgd55")}function bar(){if(document.getElementById("pm-ck"))return;var d=document.createElement("div");d.id="pm-ck";d.setAttribute("role","dialog");d.setAttribute("aria-label","Preferências de cookies");d.innerHTML='<p>Usamos cookies de medição (Google Analytics e Microsoft Clarity) só se você aceitar. Sem eles o site funciona igual. <a href="../../privacidade.html#cookies">Saiba mais</a></p><div><button type="button" data-ck="0">Recusar</button><button type="button" data-ck="1">Aceitar</button></div>';d.addEventListener("click",function(e){var b=e.target.closest("button[data-ck]");if(b)window.pmConsent(b.getAttribute("data-ck")==="1")});document.body.appendChild(d)}window.pmConsent=function(ok){try{localStorage.setItem(K,ok?"granted":"denied")}catch(e){}var b=document.getElementById("pm-ck");if(b)b.remove();if(ok)load()};window.pmCookiePrefs=function(){try{localStorage.removeItem(K)}catch(e){}bar()};if(v==="granted")load();else if(v!=="denied"){if(document.body)bar();else document.addEventListener("DOMContentLoaded",bar)}})();</script>
+</head>
+<body><main class="g">
+<header>
+<span class="eyebrow">Material gratuito · versão 1.2 · 26/11/2026</span>
+<h1>Guia prático: 7 tarefas que você pode automatizar com IA hoje</h1>
+<p class="sub">Cada tarefa traz objetivo, ferramenta, prompt pronto para copiar, um exemplo de saída e a verificação humana necessária.</p>
+<div class="box"><b>O que “automatizar” significa neste guia:</b> execução assistida por IA, com revisão humana. A IA faz o rascunho; você confere e aprova. Não é autonomia integral: nada vai para cliente, anúncio ou página sem passar pelos seus olhos.</div>
+<div class="by"><img src="../../assets/avatar-192.webp" width="36" height="36" alt=""><span>Daniel Iksilara · IA e negócios digitais</span> <span class="badge"><i></i>Produzido com IA</span></div>
+<div class="act noprint"><a class="btn btn-p" href="../../guia/7-tarefas-ia.pdf" download data-id="guia_pdf"><svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg> Baixar em PDF</a><a class="btn btn-s" href="https://www.youtube.com/@daniel.traderof?utm_source=guia&utm_medium=hub&utm_content=guia_youtube" data-id="guia_youtube"><svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Ver as demonstrações</a></div>
+</header>
+<h2>Antes de começar</h2>
+<p>Aqui, "agente de IA" é um assistente de IA de uso geral (há versões gratuitas) que recebe uma tarefa com instruções claras e entrega um primeiro rascunho. Ele é rápido para escrever, organizar e revisar texto. Ele erra, inventa detalhes quando falta informação e não conhece o seu negócio.</p>
+<div class="box"><b>A regra que vale para as 7 tarefas:</b> execução assistida, nunca autonomia integral. A IA faz o rascunho e você aprova.</div>
+<div class="box warn"><b>Não cole na IA:</b> senhas, códigos de verificação, CPF, dados bancários ou dados pessoais de clientes. Troque nomes por [CLIENTE] quando precisar de exemplo.</div>
+<p>Como usar os prompts: copie, troque o que está entre [colchetes] pelas suas informações e cole no assistente. Se a resposta vier genérica, acrescente um exemplo real seu e peça de novo.</p>
+<h2>As 7 tarefas</h2>
+<section class="t" id="t1"><h3><span>01</span>Pesquisar o mercado e os concorrentes</h3>
+<p><b class="lb">Objetivo</b> Ter, em 15 minutos, uma visão organizada de quem vende algo parecido, por quanto e com qual promessa, para decidir como se diferenciar.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita). Use a opção de pesquisa na web, se existir, e peça as fontes.</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p1">Pesquise [TIPO DE PRODUTO OU SERVIÇO] vendido para [PÚBLICO] no Brasil.
+Monte uma tabela com 5 concorrentes: nome, o que vende, faixa de preço pública, principal promessa, canal principal e link da fonte.
+Depois liste 3 lacunas que ninguém está cobrindo bem.
+Se não encontrar um dado, escreva &quot;não encontrado&quot;; não estime.</pre><button class="cp" type="button" data-copy="p1" aria-label="Copiar o prompt 1">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">| Concorrente | O que vende | Promessa principal | Fonte |
+| Loja A | kits de organização | &quot;casa arrumada em 1 dia&quot; | link |
+Lacuna 1: ninguém mostra o antes e depois com medidas reais.</pre>
+<p class="rv"><b>Verificação humana:</b> Abra os links das fontes. A IA pode errar nomes, preços e datas, ou citar páginas que não existem mais.</p></section><section class="t" id="t2"><h3><span>02</span>Criar conteúdo para as redes sociais</h3>
+<p><b class="lb">Objetivo</b> Transformar um único assunto em uma semana de posts, sem começar do zero todos os dias.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita).</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p2">Sou [QUEM VOCÊ É] e falo com [PÚBLICO] sobre [TEMA].
+Crie 5 ideias de post para [REDE]: título, gancho da primeira linha, 3 pontos do conteúdo e uma chamada para ação.
+Tom: [direto e simples]. Não invente números, depoimentos nem resultados.</pre><button class="cp" type="button" data-copy="p2" aria-label="Copiar o prompt 2">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">Post 1 · Gancho: &quot;3 erros que fazem seu cliente desistir no WhatsApp&quot;
+Pontos: demora na 1ª resposta · preço sem contexto · nenhuma pergunta de volta
+Chamada: &quot;Qual desses você já cometeu? Comenta aqui&quot;.</pre>
+<p class="rv"><b>Verificação humana:</b> Se o tom é o seu, se cada dado tem fonte e se o post respeita as regras da rede.</p></section><section class="t" id="t3"><h3><span>03</span>Revisar um anúncio antes de publicar</h3>
+<p><b class="lb">Objetivo</b> Encontrar trechos com risco de reprovação ou de promessa exagerada antes de gastar com o anúncio.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita). Tenha aberta a página oficial de políticas da plataforma (Meta ou Google).</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p3">Atue como revisor de anúncios para Meta e Google.
+Analise o texto abaixo e liste: 1) trechos com risco de reprovação e o motivo provável, 2) uma reescrita mais segura para cada trecho, 3) o que eu devo conferir na política oficial.
+Não afirme que o anúncio será aprovado. Texto do anúncio: [COLE AQUI]</pre><button class="cp" type="button" data-copy="p3" aria-label="Copiar o prompt 3">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">Trecho: &quot;emagreça 10 kg em 30 dias&quot;
+Risco: promessa de resultado de saúde (política de saúde e bem-estar)
+Reescrita: &quot;um plano de refeições para organizar a sua semana&quot;.</pre>
+<p class="rv"><b>Verificação humana:</b> Compare com a política oficial. A IA ajuda a achar riscos, mas quem aprova é a plataforma.</p></section><section class="t" id="t4"><h3><span>04</span>Responder as perguntas frequentes dos clientes</h3>
+<p><b class="lb">Objetivo</b> Ter respostas prontas, claras e no seu tom para as dúvidas que se repetem (prazo, entrega, troca, como funciona).</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita).</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p4">Você é o atendente do meu negócio, que vende [O QUE VOCÊ VENDE] para [QUEM COMPRA].
+Abaixo estão as perguntas que mais recebo e as informações corretas de cada uma.
+Escreva uma resposta curta (até 3 frases) para cada pergunta, em tom [cordial e direto].
+Não invente prazos, preços ou garantias; se faltar informação, escreva [CONFIRMAR].
+Perguntas e informações: [COLE AQUI]</pre><button class="cp" type="button" data-copy="p4" aria-label="Copiar o prompt 4">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">P: &quot;Vocês entregam no sábado?&quot;
+R: &quot;Entregamos de segunda a sexta. Se você pedir até quinta às 14h, chega na sexta [CONFIRMAR o horário de corte]&quot;.</pre>
+<p class="rv"><b>Verificação humana:</b> Prazos, valores e políticas. Tudo o que vier com [CONFIRMAR] precisa da sua resposta antes de ir para o cliente.</p></section><section class="t" id="t5"><h3><span>05</span>Escrever páginas e textos comerciais</h3>
+<p><b class="lb">Objetivo</b> Organizar a descrição de um produto ou serviço: para quem é, o que resolve, o que inclui e o que não inclui.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita).</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p5">Escreva a descrição do produto/serviço abaixo para uma página.
+Estrutura: 1) para quem é, 2) que problema resolve, 3) o que está incluído (lista), 4) o que NÃO está incluído, 5) três perguntas frequentes.
+Use só as informações que eu passar. Não use &quot;garantido&quot;, &quot;resultado certo&quot; nem números que eu não informei.
+Informações: [COLE AQUI]</pre><button class="cp" type="button" data-copy="p5" aria-label="Copiar o prompt 5">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">Para quem é: quem vende por encomenda e perde pedidos no meio das conversas.
+Não inclui: integração automática com o seu sistema.</pre>
+<p class="rv"><b>Verificação humana:</b> Se cada item da lista existe de verdade e se não sobrou nenhuma promessa que você não pode cumprir.</p></section><section class="t" id="t6"><h3><span>06</span>Organizar planilhas do negócio</h3>
+<p><b class="lb">Objetivo</b> Montar fórmulas e colunas para acompanhar vendas, custos e prazos sem depender de alguém que domine planilhas.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita).</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p6">Tenho uma planilha no [Google Planilhas ou Excel] com as colunas: [LISTE AS COLUNAS].
+Quero: [O QUE VOCÊ QUER CALCULAR OU VER].
+Escreva a fórmula exata, diga em qual célula colocar e explique em uma frase o que ela faz.
+Se houver um jeito mais simples (tabela dinâmica, filtro), sugira.</pre><button class="cp" type="button" data-copy="p6" aria-label="Copiar o prompt 6">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">Na célula F2: =SOMASE(B:B;&quot;Entregue&quot;;E:E)
+Soma a coluna E (valor) só das linhas em que a coluna B (status) diz &quot;Entregue&quot;.</pre>
+<p class="rv"><b>Verificação humana:</b> Teste a fórmula com 3 linhas de exemplo antes de confiar no resultado. Não cole dados pessoais de clientes.</p></section><section class="t" id="t7"><h3><span>07</span>Analisar métricas e decidir o próximo passo</h3>
+<p><b class="lb">Objetivo</b> Ler os números da semana (visitas, cliques, mensagens) e sair com uma decisão simples, em vez de só olhar gráficos.</p>
+<p class="tool"><b class="lb">Ferramenta</b> Qualquer assistente de IA de uso geral (por exemplo ChatGPT, Gemini, Claude ou Copilot; todos têm versão gratuita). Exporte os números do painel da plataforma em tabela ou cole os valores.</p>
+<p class="lb2">Prompt pronto</p><div class="pr"><pre id="p7">Abaixo estão as métricas da semana do meu [canal ou página], comparadas com a semana anterior.
+1) Resuma em 3 frases o que mudou. 2) Aponte o maior gargalo (onde as pessoas mais desistem). 3) Sugira UM teste para a próxima semana, com o número que vai mostrar se deu certo.
+Não tire conclusões de diferenças pequenas: avise quando houver poucos dados.
+Métricas: [COLE AQUI]</pre><button class="cp" type="button" data-copy="p7" aria-label="Copiar o prompt 7">Copiar</button></div>
+<p class="lb2">Exemplo de saída <small>(exemplo fictício)</small></p><pre class="ex">Gargalo: muitas visitas na página e poucos cliques no botão.
+Teste: trocar o texto do botão e levar o formulário para cima.
+Métrica de sucesso: taxa de clique no botão (comparar 7 dias com 7 dias).</pre>
+<p class="rv"><b>Verificação humana:</b> Confira se os números colados estão corretos e se o período é o mesmo. Com poucos dados, a resposta certa é esperar mais.</p></section>
+<h2>Como eu uso isso no projeto</h2>
+<p>No projeto que mostro em público, agentes de IA fazem rascunhos de páginas, posts, respostas e revisões, e tudo passa por conferência antes de publicar. Mostro as telas, os erros e os números reais, inclusive quando estão zerados. Este guia não promete renda nem resultado: ele economiza tempo em tarefas que você já faz.</p>
+<div class="act noprint"><a class="btn btn-p" href="https://www.youtube.com/@daniel.traderof?utm_source=guia&utm_medium=hub&utm_content=guia_youtube" data-id="guia_youtube_fim"><svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Acompanhar a série no YouTube</a><a class="btn btn-s" href="../../links/" data-id="guia_links">Todos os links</a></div>
+<footer class="foot"><p><b>Produzido com IA</b> e revisado antes de publicar. © 2026 Daniel Iksilara · IA e negócios digitais. Pode compartilhar o link deste guia; não revenda. <a href="../../privacidade.html">Privacidade</a> · <a href="../../links/">Todos os links</a> · <a href="#" onclick="window.pmCookiePrefs&&pmCookiePrefs();return false">Preferências de cookies</a></p></footer>
+</main>
+<script>document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".cp");if(!b)return;var t=document.getElementById(b.getAttribute("data-copy")).innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent="Copiado ✓"},function(){b.textContent="Selecione e copie"});setTimeout(function(){b.textContent="Copiar"},2200);if(typeof gtag==="function")gtag("event","copy_prompt",{prompt_id:b.getAttribute("data-copy")});});</script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[data-id]");if(!a||typeof gtag!=="function")return;var id=a.getAttribute("data-id"),h=a.getAttribute("href")||"";gtag("event","click_link",{link_id:id,link_url:h.slice(0,100),page:location.pathname});});</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"684527f3acc2404fba511bf5faff251a","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body></html>
